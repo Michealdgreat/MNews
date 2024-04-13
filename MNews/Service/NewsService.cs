@@ -9,7 +9,7 @@ namespace MNews.Service
         {
             using (var httpClient = new HttpClient())
             {
-                string apiUrl = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=";
+                string apiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=";
                 string requestUrl = $"{apiUrl}{apiKey}";
 
 
