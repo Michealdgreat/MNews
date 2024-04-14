@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MNews.Service;
@@ -15,7 +16,10 @@ namespace MNews.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var newsService = new NewsService();
+            string apiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=";
+            string GetrequestUrl = $"{apiUrl}{_apiKey}";
+
+            var newsService = new NewsService(GetrequestUrl);
             var news = await newsService.GetNewsAsync(_apiKey);
             return View(news);
         }
