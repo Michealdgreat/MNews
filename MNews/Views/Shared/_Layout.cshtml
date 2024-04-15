@@ -4,46 +4,204 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - MNews</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MNews.styles.css" asp-append-version="true" />
+    <link rel="icon" href="~/mnewstemplate/Img/favicon.png">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS v5.3.0 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="Style/MNN.css" rel="stylesheet" asp-append-version="true">
+    <link href="~/mnewstemplate/style/mnn.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MNews</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+	<header>
+		<!--  navbar  -->
+	</header>
+	<nav>
+		<div>
+			<i class="bi bi-list" style="font-size: 1.8rem; cursor: pointer;"></i>
+            <a href=""><img src="~/mnewstemplate/Img/favicon.png"></a>
+			<a href="">US</a>
+			<a href="">World</a>
+			<a href="">Politics</a>
+			<a href="">Business</a>
+			<a href="">Opinion</a>
+			<a href="">Health</a>
+			<a href="">Entertainment</a>
+			<a href="">Style</a>
+			<a href="">Travel</a>
+			<a href="">Sports</a>
+			<a href="">Video</a>
+			<p>More</p>
+		</div>
+		<div>
+			<i class="bi bi-search" style="cursor: pointer; font-size: 1.2rem;"></i>
+			<a href=""><button>Log In</button></a>
+		</div>
+	</nav>
+	<main>
+		<!-- nav 2  -->
+		<div id="div1">
+			<span>War in Ukraine</span>
+			<span>|</span>
+			<span>Trump indictment</span>
+			<span>|</span>
+			<span>Asiana Airlines</span>
+			<span>|</span>
+			<span>Canada wildfires</span>
+			<span>|</span>
+			<span>Sudan conflict</span>
+			<span>|</span>
+			<span>Iran missile</span>
+			<span>|</span>
+			<span>Mystery Covid variants</span>
+			<span>|</span>
+			<span>Beautiful homeless shelter</span>
+			<span>|</span>
+			<span>Qantas gender rules</span>
+		</div>
+        </main>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - MNews - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+        <footer>
+            <!-- place footer here -->
+            <h1>In Case You missed it</h1>
+            <article>
+                <div>
+                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230808141753-simone-biles-mental-health-break-wellness.jpg?c=16x9&q=h_438,w_780,c_fill">
+                    <h1>What we can learn from Simone Biles’ mental health break</h1>
+                </div>
+                <ul>
+                    <li><a href="">Great Barrier Reef stays off UNESCO ‘in danger’ list but hot El Niño summer looms</a></li>
+                    <li><a href="">Italian fugitive’s love of soccer gets him caught in Greece</a></li>
+                    <li><a href="">Foo Fighters and Alanis Morissette pay tribute to Sinéad O’Connor</a></li>
+                    <li><a href="">The UK will drill for more oil and gas in the North Sea</a></li>
+                    <li><a href="">The minority who back Netanyahu to the hilt</a></li>
+                    <li><a href=""><i class="bi bi-camera" style="padding-right: 1ch;"></i>Haunting images of abandoned sites overrun by nature</a></li>
+                    <li><a href="">Elon Musk reactivates Kanye West’s Twitter account following X rebrand</a></li>
+                    <li><a href="">The world’s most dramatic saltwater ‘sea pools’</a></li>
+                    <li><a href="">Colombian president’s son arrested</a></li>
+                    <li><a href="">Bear cools off in a California pool during heat wave</a></li>
+                    <li><a href="">Fall asleep faster with mental tricks that calm your racing mind</a></li>
+                </ul>
+            </article>
+            <article>
+                <form method="post">
+                    <input type="text" placeholder="Search CNN...">
+                    <button type="submit">Search →</button>
+                </form>
+                <div>
+                    <img src="./Img/favicon.png">
+                    <h3>Log In</h3>
+                </div>
+                <div>
+                    <h3 role="link">Travel</h3>
+                    <a href="">Destinations</a>
+                    <a href="">Food & Drink</a>
+                    <a href="">Stay</a>
+                    <a href="">News</a>
+                    <a href="">Videos</a>
+                </div>
+                <div>
+                    <h3 role="link">Sports</h3>
+                    <a href="">Football</a>
+                    <a href="">Tennis</a>
+                    <a href="">Golf</a>
+                    <a href="">Motorsport</a>
+                    <a href="">US Sports</a>
+                    <a href="">Olympics</a>
+                    <a href="">Climbing</a>
+                    <a href="">Esports</a>
+                    <a href="">Hockey</a>
+                </div>
+                <div>
+                    <h3 role="link">Videos</h3>
+                    <a href="">Live TV</a>
+                    <a href="">Digital Studios</a>
+                    <a href="">CNN Films</a>
+                    <a href="">HLN</a>
+                    <a href="">TV Schedule</a>
+                    <a href="">TV Shows A-Z</a>
+                    <a href="">CNNVR</a>
+                </div>
+                <div>
+                    <h3 role="link">Features</h3>
+                    <a href="">As Equals</a>
+                    <a href="">Call to Earth</a>
+                    <a href="">Freedom Project</a>
+                    <a href="">Impact Your World</a>
+                    <a href="">Inside Africa</a>
+                    <a href="">2 Degrees</a>
+                    <a href="">CNN Heroes</a>
+                    <a href="">All Features</a>
+                </div>
+                <div>
+                    <h3 role="link">Weather</h3>
+                    <a href="">Climate</a>
+                    <a href="">Wildfire Tracker</a>
+                    <a href="">Video</a>
+                </div>
+                <div>
+                    <h3 role="link">More</h3>
+                    <a href="">Photos</a>
+                    <a href="">Longform</a>
+                    <a href="">Investigations</a>
+                    <a href="">CNN Profiles</a>
+                    <a href="">CNN Leadership</a>
+                    <a href="">CNN Newsletters</a>
+                    <a href="">Work for CNN</a>
+                </div>
+            </article>
+            <article>
+                <a href="">Live TV</a>
+                <a href="">Audio</a>
+            </article>
+            <article>
+                <a href="">World</a>
+                <a href="">US Politics</a>
+                <a href="">Business</a>
+                <a href="">Health</a>
+                <a href="">Entertainment</a>
+                <a href="">Tech</a>
+                <a href="">Style</a>
+                <a href="">Travel</a>
+                <a href="">Sports</a>
+                <a href="">Videos</a>
+                <a href="">Features</a>
+                <a href="">Weather</a>
+                <a href="">More</a>
+            </article>
+            <article>
+                <div>
+                <img src="~/mnewstemplate/Img/favicon.png">
+                    <a href="">MN News</a>
+                </div>
+                <div>
+                    
+                    <p>|</p>
+                    <p>FOLLOW MNN</p>
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-instagram"></i>
+                    <button>Log In</button>
+                </div>
+            </article>
+            <article>
+                <br>
+                MNN News &trade; & &copy; 2024 News Network.</p>
+            </article>
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script src="MNN.js"></script>
+	<script src="js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

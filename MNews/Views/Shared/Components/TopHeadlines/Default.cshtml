@@ -1,0 +1,21 @@
+﻿@model List<ArticleModel> 
+
+<h2>Recently Published Articles</h2>
+<ul>
+    @foreach (var article in Model)
+    {
+        <div>
+            <h2>@article.Title</h2>
+            <p>@article.Description</p>
+            <p>Published At: @article.PublishedAt.ToString("yyyy-MM-dd HH:mm:ss")</p>
+            <p>Author: @article.Author</p>
+            @if (!string.IsNullOrEmpty(article.UrlToImage))
+            {
+                <img src="@article.UrlToImage" alt="Image" style="max-width: 100%;" />
+            }
+            <p>@article.Content</p>
+            <p><a href=@article.Url>Click here to read the full story</a></p>
+        </div>
+        <hr />
+    }
+</ul>

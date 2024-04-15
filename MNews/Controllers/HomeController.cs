@@ -1,21 +1,24 @@
 using Microsoft.AspNetCore.Mvc;
 using MNews.Models;
+using MNews.Service;
+using System.Configuration;
 using System.Diagnostics;
 
 namespace MNews.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(ILogger<HomeController> logger, IConfiguration configuration) : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> _logger = logger;
+        private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 
-        public HomeController(ILogger<HomeController> logger)
+        public async Task<IActionResult> Index()
         {
-            _logger = logger;
-        }
+            string apiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=";
+            string GetrequestUrl = $"{apiUrl}{_apiKey}";
 
-        public IActionResult Index()
-        {
-            return View();
+            var newsService = new NewsService(GetrequestUrl);
+            var news = await newsService.GetNewsAsync(_apiKey);
+            return View(news);
         }
 
         public IActionResult Privacy()
