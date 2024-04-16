@@ -1,65 +1,44 @@
-# MNews
 # MNN - Modern News Network Viewer
 
 ## Project Description
-MNN (Modern News Network Viewer) is an ASP.NET MVC application designed to display news articles fetched from the NewsOrg API. The application's interface is inspired by CNN, ensuring a high level of readability and ease of navigation. MNN utilizes ViewComponents to manage the UI components and to filter news content effectively, making the user experience both intuitive and responsive.
+Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that pulls news articles from the NewsOrg API. It's designed to look a bit like CNN, making it super easy and enjoyable to navigate. We use ViewComponents to manage UI components effectively and to filter content, which makes your experience smooth and straightforward.
 
 ## Key Features
-- **Dynamic News Display**: Articles are dynamically fetched using HTTP GET requests from the NewsOrg API.
-- **CNN-inspired UI**: The user interface mimics the CNN website for a familiar and user-friendly browsing experience.
-- **Efficient Filtering**: Articles can be filtered directly through the UI, allowing users to find news that matches their interests quickly.
-- **Service Layer Architecture**: All business logic related to data fetching and operations is handled centrally in the service layer.
-- **Modular ViewComponents**: Uses ViewComponents for a clean and maintainable codebase, promoting reusability and separation of concerns.
-
+- **Dynamic News Display**: Grabs articles dynamically using HTTP GET requests from the NewsOrg API.
+- **CNN-inspired UI**: The interface feels a lot like browsing CNN, which means it’s very user-friendly and easy to get around.
+- **Efficient Filtering**: You can filter articles right from the UI, helping you quickly find the news that interests you the most.
+- **Service Layer Architecture**: All the heavy lifting about data fetching and operations is done in the service layer, keeping things organized.
+- **Modular ViewComponents**: We're all about clean and maintainable code, which is why we use ViewComponents. They help keep our codebase tidy and easy to manage.
 
 ## Configuration Details
 
-Before you can run the MNN application, it's essential to configure some key settings, including securing and setting up an API key from NewsOrg. Follow these detailed steps to ensure your application is set up correctly:
+To get the MNN app up and running, there are a few things you need to set up first. Here’s how you can get your environment ready:
 
-### 1. Obtain API Key
-You'll need an API key from NewsOrg to fetch news articles:
+### 1. Obtain an API Key
+To start fetching articles, you'll need an API key from NewsOrg:
 
-- Visit the NewsOrg API's official website and register for an account.
-- Navigate to your dashboard on the NewsOrg website and generate a new API key.
+- Head over to the NewsOrg API website and sign up for an account.
+- Once you're signed in, go to your dashboard and generate a new API key.
 
-### 2. Setup Environment Variables
-Using environment variables is a secure way to manage your API key without hardcoding it into your source code:
+### 2. Securely Store Your API Key
+Instead of hardcoding your API key in your source code, we recommend using the Visual Studio Secret Manager for a safer setup:
 
-- **For Development in Visual Studio:**
-  - Open your project in Visual Studio.
-  - Right-click on your project in the Solution Explorer and select "Properties".
-  - Navigate to the "Debug" tab.
-  - Find the "Environment variables" section and add a new entry:
-    - Name: `NewsApiKey`
-    - Value: `<Your NewsOrg API key>`
-  - Save your changes by clicking "Save".
+- **Using Secret Manager in Visual Studio:**
+  - In Visual Studio, right-click on your project in Solution Explorer and choose “Manage User Secrets”.
+  - This opens a `secrets.json` file. Add your API key in this format:
+    ```json
+    {
+      "apiKey": "REPLACE_WITH_YOUR_KEY"
+    }
+    ```
+  - The secret is now safely stored and can be accessed from your application without exposing it in your codebase.
 
 ### 3. Accessing the API Key in Your Application
-Here’s how you can access the API key in your ASP.NET MVC project:
+To use the API key in your application, you dont need to write any code, the logic to pull it is within the application.
 
 ```csharp
-public class NewsService
+//Here is a sample ViewComponent class that fetches your api key from secret file.
+public class TopHeadlines : ViewComponent
 {
-    private readonly IConfiguration _configuration;
-    
-    public NewsService(IConfiguration configuration)
-    {
-        _configuration = configuration;
-    }
-
-    public string GetApiKey()
-    {
-        return _configuration.GetValue<string>("NewsApiKey");
-    }
+    private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 }
-
-## License
-MNN is released under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Support
-For support, please open an issue through the GitHub Issue Tracker associated with this repository.
-
-## Acknowledgements
-- Thanks to the NewsOrg API for providing the news data that powers our application.
-- Gratitude to the ASP.NET MVC framework for enabling a robust application architecture.
-
