@@ -10,27 +10,6 @@
     <title>News</title>
 </head>
 <body>
-    <h1>Latest News</h1>
-
-    @foreach (var article in Model.Take(1))
-    {
-        <div>
-            <h2>@article.Title</h2>
-            <p>@article.Description</p>
-            <p>Published At: @article.PublishedAt.ToString("yyyy-MM-dd HH:mm:ss")</p>
-            <p>Author: @article.Author</p>
-            @if (!string.IsNullOrEmpty(article.UrlToImage))
-            {
-                <img src="@article.UrlToImage" alt="Image" style="max-width: 100%;" />
-            }
-            <p>@article.Content</p>
-            <p><a href=@article.Url>Click here to read the full story</a></p>
-        </div>
-        <hr />
-    }
-
-    @await Component.InvokeAsync("TopHeadlines", new { randomize = true })
-
     <section id="news1">
         <article>
             <a href=""><b>Officials: Over 2,600 rescued from flooded Ukrainian-controlled areas of Kherson</b></a>
@@ -40,9 +19,8 @@
             </div>
             <a href=""><b>Water level at the Nova Kakhovka reservoir ‘continues to decline,’ minister says, after collapse of major dam in southern Ukraine</b></a>
             <ul>
-                <li><a href="">Ukrainians in battered southern town hopeful about counter offensive</a></li>
-                <li><a href=""><i class="bi bi-play-circle" style="color: red; padding-right: 5px; border-bottom: 1px solid white;"></i>Video shows Western donated equipment destroyed by Russia</a></li>
-                <li><a href=""><b>Analysis:</b> What’s happening along the frontline? It’s too early to tell</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3 })
+
             </ul>
         </article>
         <article>
@@ -53,9 +31,8 @@
                 </div>
                 <a href=""><b>Trump’s chilling remarks reveal a deeper, emerging reality about the 2024 campaign</b></a>
                 <ul>
-                    <li><a href="">Takeaways from Trump’s historic court appearance</a></li>
-                    <li><a href=""><i class="bi bi-play-circle" style="color: red; padding-right: 5px; border-bottom: 1px solid white;"></i>Trump’s pit stop after his arrest was a key play. Here’s why</a></li>
-                    <li><a href=""><b>Opinion:</b> Trump’s case is a crucial test for justice in America</a></li>
+                    @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3 })
+
                 </ul>
             </div>
             <div>
@@ -67,13 +44,8 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230615155632-01-pittsburgh-synagogue-trial-0615-bowers.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Pittsburgh synagogue gunman found guilty on all 63 charges</b></a>
             <ul>
-                <li><a href="">Cyclist Gino Mäder dies aged 26 after high-speed Tour de Suisse crash</a></li>
-                <li><a href="">Thousands of dead fish wash up on Thai beach</a></li>
-                <li><a href=""><i class="bi bi-play-circle" style="color: red; padding-right: 5px; border-bottom: 1px solid white;"></i>Video shows key Russian supply bridge knocked out by missile</a></li>
-                <li><a href="">Alleged Russian diplomat squatter is just ‘some bloke standing on a blade of grass’, Australian PM says</a></li>
-                <li><a href="">Beijing records its hottest ever June day</a></li>
-                <li><a href=""><i class="bi bi-play-circle" style="color: red; padding-right: 5px; border-bottom: 1px solid white;"></i>CNN’s Amanpour asks Obama about ‘spectacle’ of Trump. Hear his answer</a></li>
-                <li><a href="">Teenager killed by exploding fire extinguisher during school drill</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
+
             </ul>
         </article>
     </section>
@@ -82,12 +54,8 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230622192324-01-how-repel-mosquitos-scientifically-wellness-scn.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>What scientists say keeps mosquitoes at bay</b></a>
             <ul>
-                <li><a href="">Train derailment on Montana bridge sends multiple rail cars into the Yellowstone River</a></li>
-                <li><a href="">Orca pod attacks Ocean Race boats</a></li>
-                <li><a href=""><b>CNN Exclusive:</b> GOP fake electors given immunity as Jan. 6 probe heats up</a></li>
-                <li><a><i class="bi bi-play-circle" style="color: red; padding-right: 5px; border-bottom: 1px solid white;"></i>New Marvel TV show uses AI and fans are upset</a></li>
-                <li><a href="">Tina Turner to be honored by Patti LaBelle during the BET Awards on Sunday</a></li>
-                <li><a href="">6 amazing facts about the deepest point known on Earth</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 6 })
+
             </ul>
         </article>
         <article class="SArticle">
@@ -177,35 +145,8 @@
             </ul>
         </article>
     </section>
-    <section id="news4">
-        <h1>Featured Sections</h1>
-        <article class="SArticle">
-            <div style="position: relative;">
-                <img src="https://media.cnn.com/api/v1/images/stellar/prod/230627152404-nyse-file-0609.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
-                <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">LIVE UPDATES</b></div>
-            </div>
-            <a href=""><b>Live updates on a huge day for the US economy: Housing, GDP, jobs and Bidenomics</b></a>
-            <ul>
-                <li><a href="">Flight problems mostly over — except at United</a></li>
-                <li><a href="">The Fed is secretly stress testing the US economy against nightmare scenarios</a></li>
-                <li><a href="">Climate event El Niño could hit the economy from food prices to clothing sales this year</a></li>
-                <li><a href="">Jesse Watters was invited to speak before a group of executives. His remarks led to an ‘epic meltdown’</a></li>
-                <li><a href="">World Bank approves $700 million for crisis-hit Sri Lanka</a></li>
-            </ul>
-        </article>
-        <article class="SArticle">
-            <div>CNN TRAVEL</div>
-            <img src="https://media.cnn.com/api/v1/images/stellar/prod/230627100639-icon-of-the-sea-card.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
-            <a href=""><b>The world’s biggest cruise ship is almost ready</b></a>
-            <ul>
-                <li><a href="">She stuffed a bra with clothes before boarding a plane. Here’s why</a></li>
-                <li><a href="">The gigantic tunnels and bridges linking Asia to Europe</a></li>
-                <li><a href="">She delivered a baby on an airplane. Here’s what happened next</a></li>
-                <li><a href="">The fire that’s ‘burned for 4,000 years and never gone out’</a></li>
-                <li><a href="">Qantas reveals economy seats for 19-hour NYC-Sydney ultra long-haul flights</a></li>
-            </ul>
-        </article>
-        <div></div>
+    <section>
+        <h1>Featured Section</h1>
     </section>
     <section id="news5">
         <article class="SArticle">
@@ -213,33 +154,21 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230629093850-01-caroline-wozniacki-file.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href="" style="font-size: 1.2rem;"><b>Caroline Wozniacki plans return to tennis at US Open three years after retiring from the sport</b></a>
             <ul>
-                <li><a href="">Australian teenager Arisa Trew, 13, becomes first female in skateboarding history to land 720 trick</a></li>
-                <li><a href="">Ultra runner breaks record of world’s oldest 100-mile race by almost 80 minutes</a></li>
-                <li><a href="">Summer transfer window: The biggest moves so far as Saudi Arabia becomes major factor</a></li>
-                <li><a href="">One of the world’s fastest athletes is without a country to run for</a></li>
-                <li><a href="">Meet the photographer redefining how we view the world of chess</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
             </ul>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230616123458-02-bronze-age-sword-germany.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Archaeologists find a 3,000-year-old sword so well preserved it’s still gleaming</b></a>
             <ul>
-                <li><a href="">Princess Diana’s famous ‘black sheep’ sweater is going up for auction</a></li>
-                <li><a href="">After 25 years and $185M, Spain’s new Royal Collections Museum is finally opening</a></li>
-                <li><a href="">The celebrity who epitomized ‘Barbiecore’ two decades before it had a name</a></li>
-                <li><a href="">These joyful photographs of Scouts show a sense of belonging and freedom</a></li>
-                <li><a href="">Why the in-flight magazine for an African airline shuttered in 2002 is a must-read today</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
             </ul>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230626155240-02-wagner-rostov-062423.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>How Prigozhin’s mutiny will resonate in Russia</b></a>
             <ul>
-                <li><a href="">You might want to rethink taking melatonin as a sleep aid</a></li>
-                <li><a href="">It wasn’t like this in Moscow in 1991</a></li>
-                <li><a href="">The Supreme Court rewrites American society once again</a></li>
-                <li><a href="">We’re in the midst of anti-sex backlash that has ensnared Jennifer Lawrence’s new romcom</a></li>
-                <li><a href="">DeSantis is trying to climb the Trump wall</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
             </ul>
         </article>
     </section>
@@ -248,29 +177,24 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230707160356-alexandria-ocasio-cortez-053123.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Rep. Alexandria Ocasio-Cortez supports Biden’s reelection bid</b></a>
             <ul>
-                <li><a href="">DOJ has spent over $9 million investigating Trump since special counsel was appointed</a></li>
-                <li><a href="">White House confirms prisoner swap talks with Russia over reporter Evan Gershkovich but so far there’s no ‘clear pathway’</a></li>
-                <li><a href="">Biden wants to roll back Trump’s expansion of short-term health insurance plans</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3 })
+
             </ul>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230703122657-01-cambrian-predator-scn.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>New study: Ancient shrimplike predator was misunderstood</b></a>
             <ul>
-                <li><a href="">Forget TikTok claims: ‘Nature’s Ozempic’ is no such thing, experts say</a></li>
-                <li><a href="">Saturn’s rings shine in new Webb telescope photo</a></li>
-                <li><a href="">Scientists find new clue in what led to megalodon’s demise</a></li>
-                <li><a href="">Scientists find new clue in what led to megalodon’s demise</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4 })
+
             </ul>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230426220909-samsung-022023.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Samsung flags massive drop in quarterly profit as chip glut drags on</b></a>
             <ul>
-                <li><a href="">Twitter threatens to sue Meta after rival app Threads gains traction</a></li>
-                <li><a href="">A flying car prototype just got an airworthiness certificate from the FAA</a></li>
-                <li><a href="">Meta officially launches Twitter rival Threads. 30 million have joined already</a></li>
-                <li><a href="">With Twitter in chaos, Mark Zuckerberg looks to pounce</a></li>
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4 })
+
             </ul>
         </article>
 
