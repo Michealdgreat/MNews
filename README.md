@@ -12,19 +12,46 @@ MNN (Modern News Network Viewer) is an ASP.NET MVC application designed to displ
 - **Modular ViewComponents**: Uses ViewComponents for a clean and maintainable codebase, promoting reusability and separation of concerns.
 
 
-## Usage
-After launching the application, navigate to `http://localhost:5000` in your web browser to start exploring the news articles. Utilize the filtering options provided to personalize the news feed according to your preferences.
+## Configuration Details
 
-## Contributing
-Interested in contributing to the MNN project? Here's how you can help:
+Before you can run the MNN application, it's essential to configure some key settings, including securing and setting up an API key from NewsOrg. Follow these detailed steps to ensure your application is set up correctly:
 
-1. **Fork the Repository**: Use the 'Fork' button above to create your own copy.
-2. **Clone Your Fork**: `git clone https://github.com/yourusername/MNN.git`
-3. **Create a Branch**: `git checkout -b your-feature-branch`
-4. **Make Your Changes**: Add your feature or fix bugs.
-5. **Commit Your Changes**: `git commit -am 'Add some feature or fix a bug'`
-6. **Push to Your Fork**: `git push origin your-feature-branch`
-7. **Create a Pull Request**: Start a pull request from your fork back to the main MNN repository.
+### 1. Obtain API Key
+You'll need an API key from NewsOrg to fetch news articles:
+
+- Visit the NewsOrg API's official website and register for an account.
+- Navigate to your dashboard on the NewsOrg website and generate a new API key.
+
+### 2. Setup Environment Variables
+Using environment variables is a secure way to manage your API key without hardcoding it into your source code:
+
+- **For Development in Visual Studio:**
+  - Open your project in Visual Studio.
+  - Right-click on your project in the Solution Explorer and select "Properties".
+  - Navigate to the "Debug" tab.
+  - Find the "Environment variables" section and add a new entry:
+    - Name: `NewsApiKey`
+    - Value: `<Your NewsOrg API key>`
+  - Save your changes by clicking "Save".
+
+### 3. Accessing the API Key in Your Application
+Here’s how you can access the API key in your ASP.NET MVC project:
+
+```csharp
+public class NewsService
+{
+    private readonly IConfiguration _configuration;
+    
+    public NewsService(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+
+    public string GetApiKey()
+    {
+        return _configuration.GetValue<string>("NewsApiKey");
+    }
+}
 
 ## License
 MNN is released under the MIT License - see the [LICENSE](LICENSE) file for details.
