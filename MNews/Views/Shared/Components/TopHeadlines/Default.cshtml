@@ -2,7 +2,7 @@
 
 <h2>Recently Published Articles</h2>
 <ul>
-    @foreach (var article in Model)
+    @foreach (var article in Model.TakeWhile(article => article.UrlToImage !=null).Take(3))
     {
         <div>
             <h2>@article.Title</h2>

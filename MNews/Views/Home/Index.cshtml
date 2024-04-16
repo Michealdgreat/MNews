@@ -29,7 +29,7 @@
         <hr />
     }
 
-    @await Component.InvokeAsync("TopHeadlines")
+    @await Component.InvokeAsync("TopHeadlines", new { randomize = true })
 
     <section id="news1">
         <article>
@@ -104,26 +104,21 @@
                 </li>
             </ul>
         </article>
+        @* SIDE BAR SECTION 1 *@
         <article class="SArticle">
-            <ul style="margin-top: 0;">
-                <li style="border-top: none; padding-top: 0;">
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/220107151943-restricted-black-lego-sculpture-14.jpg?c=16x9&q=h_144,w_256,c_fill" class="vSmallImg">
-                    <a href="">Meet the Ghanaian Canadian Lego sculptor building a Black universe</a>
-                </li>
-                <li>
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230621133729-past-lives-still-2.jpg?c=16x9&q=h_144,w_256,c_fill" class="vSmallImg">
-                    <a href="">The first serious Oscar contender of the year is here</a>
-                </li>
-                <li>
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230623141311-01-us-drive-thrus-urban-planning-restricted.jpg?c=16x9&q=h_144,w_256,c_fill" class="vSmallImg">
-                    <a href="">Why cities want to ban new drive-thrus</a>
-                </li>
-                <li>
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230624134353-alligator-hilton-head-fisherman-1.jpg?c=16x9&q=h_144,w_256,c_fill" class="vSmallImg">
-                    <a href="">Watch: Alligator chases fisherman</a>
-                </li>
-            </ul>
+                <ul style="margin-top: 0;">
+
+                @foreach (var article in Model.Take(4))
+                {
+                    <li style="border-top: none; padding-top: 0;">
+                        <img src="@article.UrlToImage" class="vSmallImg">
+                        <a href=@article.Url>@article.Title</a>
+                    </li>
+                    <hr/>
+                }
+                </ul>
         </article>
+
     </section>
     <section id="news3">
         <article class="SArticle">
