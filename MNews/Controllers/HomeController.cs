@@ -13,7 +13,7 @@ namespace MNews.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string apiUrl = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=";
+            string apiUrl = "https://newsapi.org/v2/everything?q=finland&apikey=";
             string GetrequestUrl = $"{apiUrl}{_apiKey}";
 
             var newsService = new NewsService(GetrequestUrl);
