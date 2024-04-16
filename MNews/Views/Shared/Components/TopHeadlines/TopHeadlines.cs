@@ -7,12 +7,13 @@ namespace MNews.Views.Shared.Components.TopHeadlines
     {
         private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 
-        public async Task<IViewComponentResult> InvokeAsync(bool randomize)
+        public async Task<IViewComponentResult> InvokeAsync(bool randomize, string articleQuery)
         {
-            string apiUrl = "https://newsapi.org/v2/top-headlines?country=us&apiKey=";
-            string GetrequestUrl = $"{apiUrl}{_apiKey}";
+            string apiUrl = "https://newsapi.org/v2/everything?q=";
 
-            var newsService = new NewsService(GetrequestUrl);
+            string getRequestUrl = $"{apiUrl}{articleQuery}&apikey={_apiKey}";
+
+            var newsService = new NewsService(getRequestUrl);
             var news = await newsService.GetNewsAsync(_apiKey);
 
             if (randomize)
