@@ -11,25 +11,19 @@ using System.Threading.Tasks;
 namespace MNews.Views.Shared.Components.MNNewsList
 {
 
-    public class MNNewsList : ViewComponent
+    public class MNNewsList(IConfiguration configuration, IMemoryCache cache) : ViewComponent
     {
-        private readonly IMemoryCache _cache;
-        private readonly string _apiKey;
+        private readonly IMemoryCache _cache = cache;
+        private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 
-        public MNNewsList(IConfiguration configuration, IMemoryCache cache)
-        {
-            _apiKey = configuration.GetValue<string>("apiKey");
-            //Implemented caching because it takes some time to complete roundtrip and data fetching
-            _cache = cache;
-        }
-
-        public async Task<IViewComponentResult> InvokeAsync(bool randomize, int noOfArticle)
+        public async Task<IViewComponentResult> InvokeAsync(bool randomize, int noOfArticle, string articleQuery)
         {
             var cacheKey = $"News-{randomize}-{noOfArticle}";
             if (!_cache.TryGetValue(cacheKey, out List<ArticleModel> cachedNews))
             {
-                string apiUrl = "https://newsapi.org/v2/everything?q=tech&from=2024-04-13&to=2024-04-15&sortBy=popularity&apiKey=";
-                string getRequestUrl = $"{apiUrl}{_apiKey}";
+                string apiUrl = "https://newsapi.org/v2/everything?q=";
+
+                string getRequestUrl = $"{apiUrl}{articleQuery}&apikey={_apiKey}";
 
                 var newsService = new NewsService(getRequestUrl);
                 var news = await newsService.GetNewsAsync(_apiKey);
