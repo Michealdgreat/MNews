@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome to MNNews";
 }
 
 @model List<ArticleModel>
@@ -19,7 +19,8 @@
             </div>
             <a href=""><b>Water level at the Nova Kakhovka reservoir ‘continues to decline,’ minister says, after collapse of major dam in southern Ukraine</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3 })
+
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 2 , articleQuery = "finland" })
 
             </ul>
         </article>
@@ -31,21 +32,15 @@
                 </div>
                 <a href=""><b>Trump’s chilling remarks reveal a deeper, emerging reality about the 2024 campaign</b></a>
                 <ul>
-                    @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3 })
-
+                    @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 7, articleQuery = "finland" })
                 </ul>
-            </div>
-            <div>
-                <img src="https://media.cnn.com/api/v1/images/stellar/prod/230531134142-india-new-parliament-house-building-0524.jpg?c=16x9&q=h_720,w_1280,c_fill" class="smallImg">
-                <a href=""><b>A map in India’s new Parliament is making its neighbors nervous</b></a>
             </div>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230615155632-01-pittsburgh-synagogue-trial-0615-bowers.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Pittsburgh synagogue gunman found guilty on all 63 charges</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
-
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "crime" })
             </ul>
         </article>
     </section>
@@ -54,7 +49,7 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230622192324-01-how-repel-mosquitos-scientifically-wellness-scn.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>What scientists say keeps mosquitoes at bay</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 6 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4, articleQuery="health" })
 
             </ul>
         </article>
@@ -87,6 +82,9 @@
                 </ul>
         </article>
 
+    </section>
+    <section>
+        <h1>Featured Section</h1>
     </section>
     <section id="news3">
         <article class="SArticle">
@@ -146,7 +144,7 @@
         </article>
     </section>
     <section>
-        <h1>Featured Section</h1>
+        <h1>More From MNews</h1>
     </section>
     <section id="news5">
         <article class="SArticle">
@@ -154,21 +152,21 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230629093850-01-caroline-wozniacki-file.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href="" style="font-size: 1.2rem;"><b>Caroline Wozniacki plans return to tennis at US Open three years after retiring from the sport</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "sport" })
             </ul>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230616123458-02-bronze-age-sword-germany.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Archaeologists find a 3,000-year-old sword so well preserved it’s still gleaming</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "history" })
             </ul>
         </article>
         <article class="SArticle">
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230626155240-02-wagner-rostov-062423.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>How Prigozhin’s mutiny will resonate in Russia</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "war" })
             </ul>
         </article>
     </section>
@@ -177,7 +175,7 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230707160356-alexandria-ocasio-cortez-053123.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Rep. Alexandria Ocasio-Cortez supports Biden’s reelection bid</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3, articleQuery = "politics" })
 
             </ul>
         </article>
@@ -185,7 +183,7 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230703122657-01-cambrian-predator-scn.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>New study: Ancient shrimplike predator was misunderstood</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4, articleQuery = "music" })
 
             </ul>
         </article>
@@ -193,7 +191,7 @@
             <img src="https://media.cnn.com/api/v1/images/stellar/prod/230426220909-samsung-022023.jpg?c=16x9&q=h_438,w_780,c_fill" class="smallImg">
             <a href=""><b>Samsung flags massive drop in quarterly profit as chip glut drags on</b></a>
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4 })
+                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4, articleQuery = "sport" })
 
             </ul>
         </article>
