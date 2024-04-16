@@ -11,10 +11,10 @@ public class NewsService(string requestUrl)
     {
         using var httpClient = new HttpClient();
 
-        HttpClient client = new HttpClient();
+        HttpClient client = new();
         client.DefaultRequestHeaders.Add("User-Agent", "MN News/1.0");
 
-        HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, _requestUrl);
+        HttpRequestMessage request = new(HttpMethod.Get, _requestUrl);
         request.Headers.Add("Authorization", "Bearer " + apiKey);
 
         HttpResponseMessage CheckStatusCode = await client.SendAsync(request);
