@@ -4,6 +4,5 @@
     @foreach (var article in Model.TakeWhile(article => article.UrlToImage != null))
     {
         <li><a href=@article.Url target="_blank">@article.Title</a></li>
-        
     }
 </ul>
