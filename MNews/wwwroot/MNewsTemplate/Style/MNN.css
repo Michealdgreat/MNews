@@ -136,7 +136,7 @@ main #news2 article {
   padding-top: 2rem;
 }
 main #news2 article:first-child::before {
-  content: "MORE TOP STORIES";
+  content: "HEALTH NEWS";
   position: absolute;
   top: 0;
   left: 0;
@@ -178,13 +178,13 @@ main #news3 article {
   padding-top: 2rem;
 }
 main #news3 article:first-child::before {
-  content: "TAKE A CLOSER LOOK";
+  content: "TRENDING NEWS";
   position: absolute;
   top: 0;
   left: 0;
 }
 main #news3 article:nth-child(3)::before {
-  content: "TAKE A BREAK";
+  content: "FOOD";
   position: absolute;
   top: 0;
   left: 0;
@@ -218,7 +218,7 @@ main #news4 article {
   padding-top: 2rem;
 }
 main #news4 article:nth-child(2)::before {
-  content: "CNN BUSINESS";
+  content: "MNN BUSINESS";
   position: absolute;
   top: 0;
   left: 0;
@@ -332,13 +332,13 @@ main #news5 article:not(:first-child)::after {
   background-color: rgb(204, 12, 21);
 }
 main #news5 article:nth-child(2)::before {
-  content: "STYLE";
+  content: "TECHNOLOGY";
   position: absolute;
   top: 0;
   left: 0;
 }
 main #news5 article:nth-child(3)::before {
-  content: "OPINION";
+  content: "HEALTH";
   position: absolute;
   top: 0;
   left: 0;
@@ -361,13 +361,13 @@ main #news6 article:first-child::before {
   left: 0;
 }
 main #news6 article:nth-child(2)::before {
-  content: "SCIENCE AND HEALTH";
+  content: "TRAVEL";
   position: absolute;
   top: 0;
   left: 0;
 }
 main #news6 article:nth-child(3)::before {
-  content: "TECH";
+  content: "HISTORY";
   position: absolute;
   top: 0;
   left: 0;
