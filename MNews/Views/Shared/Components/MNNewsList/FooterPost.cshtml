@@ -1,0 +1,15 @@
+﻿@model List<ArticleModel>
+
+@foreach (var articleForFooter in Model.Take(1))
+{
+    <div>
+        <img src="@articleForFooter.UrlToImage?c=16x9&q=h_438,w_780,c_fill" alt="@articleForFooter.Title">
+        <h1>@articleForFooter.Title</h1>
+</div>
+}
+<ul>
+    @foreach (var articleForFooter in Model.Skip(1).Take(10))
+    {
+        <li><a href="@articleForFooter.Url">@articleForFooter.Title</a></li>
+    }
+</ul>
