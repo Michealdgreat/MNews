@@ -6,10 +6,19 @@ namespace MNews
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddDistributedMemoryCache(); // Required to enable session state
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Sets session timeout
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true; // Mark the session cookie as essential
+            });
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
@@ -25,6 +34,8 @@ namespace MNews
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
