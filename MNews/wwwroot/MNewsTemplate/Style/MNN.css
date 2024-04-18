@@ -317,7 +317,7 @@ main {
         main #news5 article {
             position: relative;
             border-top: 2px solid green;
-            padding-top: 2rem;
+            padding-top: 0rem;
         }
 
             main #news5 article:first-child {
@@ -371,14 +371,14 @@ main {
             }
 
             main #news5 article:nth-child(2)::before {
-                content: "TECHNOLOGY";
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
             }
 
             main #news5 article:nth-child(3)::before {
-                content: "HEALTH";
+                content: "";
                 position: absolute;
                 top: 0;
                 left: 0;
