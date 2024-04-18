@@ -20,7 +20,7 @@
 </section>
 <section id="news5">
     <article class="SArticle">
-        <div>SPORT</div>
+        <div>TRENDING</div>
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(0).Take(1))
         {
             <img src="@article.UrlToImage" class="smallImg">
@@ -34,7 +34,7 @@
         }
     </article>
     <article class="SArticle">
-        <div>SPORT</div>
+        <div>MNN</div>
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(5).Take(1))
         {
             <img src="@article.UrlToImage" class="smallImg">
@@ -48,7 +48,7 @@
         }
     </article>
     <article class="SArticle">
-        <div>SPORT</div>
+        <div>MORE ENGAGEMENTS</div>
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(1))
         {
             <img src="@article.UrlToImage" class="smallImg">
