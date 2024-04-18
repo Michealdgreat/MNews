@@ -23,19 +23,20 @@ public class NewsService(string requestUrl)
         string apiResponse = await response.Content.ReadAsStringAsync();
         var newsApiResponse = JsonConvert.DeserializeObject<ApiResponseModel>(apiResponse);
 
-        // check if its a 200 OK Response from API and check id Article list is not 0
-        if (newsApiResponse != null && newsApiResponse.Articles != null)
+        //check id Article list is not 0
+        if (newsApiResponse.Articles == null)
         {
-            //return only arcle with featured image
+            throw new Exception("Failed to fetch data from News API.");
+        }
+        else
+        {
+            //return only arcticle with featured image
             var articlesWithImgUrl = newsApiResponse.Articles
                 .Where(article => !string.IsNullOrEmpty(article.UrlToImage)).ToList();
 
             return articlesWithImgUrl;
 
         }
-        else
-        {
-            throw new Exception("Failed to fetch data from News API.");
-        }
     }
+
 }
