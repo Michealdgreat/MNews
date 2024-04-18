@@ -8,7 +8,7 @@
     @foreach (var article in Model.Take(10))
     {
         <li>
-            <a href="@article.Url" style="font-weight: bold; font-size: larger;">@article.Title</a>
+            <a href="@article.Url" style="font-weight: bold; font-size: large;">@article.Title</a>
             <br />
             <hr />
         </li>
@@ -16,7 +16,7 @@
 </ul>
 
 <section>
-    <h1>More Related News</h1>
+    <h1>Explore More News Related to Your Search</h1>
 </section>
 <section id="news5">
     <article class="SArticle">
@@ -29,8 +29,9 @@
 
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(1).Take(5))
         {
-            <li><a href=@article.Url target="_blank">@article.Title</a></li>
-
+            <ul>
+                <li><a href=@article.Url target="_blank">@article.Title</a></li>
+            </ul>
         }
     </article>
     <article class="SArticle">
@@ -43,8 +44,9 @@
 
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(5))
         {
-            <li><a href=@article.Url target="_blank">@article.Title</a></li>
-
+            <ul>
+                <li><a href=@article.Url target="_blank">@article.Title</a></li>
+            </ul>
         }
     </article>
     <article class="SArticle">
@@ -57,8 +59,9 @@
 
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(7).Take(5))
         {
-            <li><a href=@article.Url target="_blank">@article.Title</a></li>
-
+            <ul>
+                <li><a href=@article.Url target="_blank">@article.Title</a></li>
+            </ul>
         }
     </article>
 </section>
