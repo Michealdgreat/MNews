@@ -8,7 +8,7 @@
     @foreach (var article in Model.Take(10))
     {
         <li>
-            <a href="@article.Url" style="font-weight: bold; font-size: large;">@article.Title</a>
+            <a href="@Url.Action("ArticleDetails", "Home", new { url = article.Title })" style="font-weight: bold; font-size: large;">@article.Title</a>
             <br />
             <hr />
         </li>
@@ -24,13 +24,13 @@
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(0).Take(1))
         {
             <img src="@article.UrlToImage" class="smallImg">
-            <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) style="font-size: 1.2rem;"><b>@article.Title</b></a>
         }
 
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(1).Take(5))
         {
             <ul>
-                <li><a href=@article.Url target="_blank">@article.Title</a></li>
+                <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) target="_blank">@article.Title</a></li>
             </ul>
         }
     </article>
@@ -39,13 +39,13 @@
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(5).Take(1))
         {
             <img src="@article.UrlToImage" class="smallImg">
-            <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) style="font-size: 1.2rem;"><b>@article.Title</b></a>
         }
 
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(5))
         {
             <ul>
-                <li><a href=@article.Url target="_blank">@article.Title</a></li>
+                <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) target="_blank">@article.Title</a></li>
             </ul>
         }
     </article>
@@ -54,13 +54,13 @@
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(1))
         {
             <img src="@article.UrlToImage" class="smallImg">
-            <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) style="font-size: 1.2rem;"><b>@article.Title</b></a>
         }
 
         @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(7).Take(5))
         {
             <ul>
-                <li><a href=@article.Url target="_blank">@article.Title</a></li>
+                <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) target="_blank">@article.Title</a></li>
             </ul>
         }
     </article>

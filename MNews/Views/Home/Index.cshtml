@@ -16,7 +16,7 @@
             @foreach (var article in Model.TakeWhile(article => article.UrlToImage != null).Take(1))
             {
 
-                <a href=@article.Url><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             <div style="position: relative;">
                     <img src="@article.UrlToImage" class="bigImg">
                 <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">LIVE UPDATES</b></div>
@@ -24,11 +24,14 @@
             }
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(2).Take(1))
             {
-                <a href=@article.Url><b>Water level at the Nova Kakhovka reservoir ‘continues to decline,’ minister says, after collapse of major dam in southern Ukraine</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
 
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 2 , articleQuery = "finland" })
+                @foreach (var article in Model.Skip(16).Take(2))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
 
             </ul>
         </article>
@@ -41,10 +44,14 @@
                         <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 0; background-color: white; display: flex; align-items: center; justify-content: space-between;"><i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">LIVE UPDATES</b></div>
                     </div>
 
-                    <a href=@article.Url><b>@article.Title</b></a>
+                    <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
                 }
                 <ul>
-                    @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 6, articleQuery = "finland" })
+                    @foreach (var article in Model.Skip(4).Take(6))
+                    {
+                        <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                    }
                 </ul>
             </div>
         </article>
@@ -52,10 +59,14 @@
                            @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(3).Take(1))
                 {
             <img src="@article.UrlToImage" class="smallImg">
-            <a href=@article.Url><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
                 }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "crime" })
+                @foreach (var article in Model.Skip(10).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
             </ul>
         </article>
     </section>
@@ -66,10 +77,14 @@
                 @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(5).Take(1))
                 {
             <img src="@article.UrlToImage" class="smallImg">
-            <a href=@article.Url><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
                 }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4, articleQuery="health" })
+                @foreach (var article in Model.Skip(15).Take(4))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
 
             </ul>
         </article>
@@ -77,14 +92,14 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(1))
                 {
             <img src="@article.UrlToImage" class="bigImg">
-            <a href=@article.Url><b>‘@article.Title’</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>‘@article.Title’</b></a>
                 }
             <ul>
                 @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(7).Take(2))
                 {
                     <li>
                         <img src="@article.UrlToImage" class="vSmallImg">
-                        <a href=@article.Url>@article.Title</a>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
                     </li>
                 }
             </ul>
@@ -97,7 +112,7 @@
                 {
                     <li style="border-top: none; padding-top: 0;">
                         <img src="@article.UrlToImage" class="vSmallImg">
-                        <a href=@article.Url>@article.Title</a>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
                     </li>
                     <hr/>
                 }
@@ -113,14 +128,14 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(8).Take(1))
                 {
             <img src="@article.UrlToImage" class="smallImg">
-            <a href=@article.Url><b>@article.Title</b></a>
+            <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
                 }
             <ul>
                 @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(9).Take(3))
                 {
                     <li>
                         <img src="@article.UrlToImage" class="vSmallImg">
-                        <a href=@article.Url>@article.Title</a>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
                     </li>
                 }
             </ul>
@@ -129,7 +144,7 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(10).Take(1))
             {
                 <img src="@article.UrlToImage" class="bigImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             
             <ul>
@@ -137,7 +152,7 @@
                 {
                     <li>
                         <img src="@article.UrlToImage" class="vSmallImg">
-                        <a href=@article.Url>@article.Title</a>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
                     </li>
                 }
                 
@@ -147,13 +162,13 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(12).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
                 @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(13).Take(2))
                 {   <li>
                         <img src="@article.UrlToImage" class="vSmallImg">
-                        <a href=@article.Url><b>@article.Title</b></a>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
                     </li>
                     
                 }
@@ -165,7 +180,7 @@
                             <img src="@article.UrlToImage" class="vSmallImg">
                             <div style="color: white; position: absolute; left: 0; bottom: 0; background-color: gray; padding: .1rem .4rem;"><i class="bi bi-play-circle" style="padding-right: 5px;"></i>Watch</div>
                         </div>
-                        <a href=@article.Url>@article.Title</a>
+                        <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a>
                     </li>
                 }
             </ul>
@@ -180,11 +195,15 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(15).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title }) style="font-size: 1.2rem;"><b>@article.Title</b></a>
             }
 
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "sport" })
+                @foreach (var article in Model.Skip(15).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
             </ul>
         </article>
         <article class="SArticle">
@@ -192,10 +211,14 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(16).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "history" })
+                @foreach (var article in Model.Skip(20).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
             </ul>
         </article>
         <article class="SArticle">
@@ -203,10 +226,14 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(17).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 5, articleQuery = "war" })
+                @foreach (var article in Model.Skip(20).Take(5))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+
+                }
             </ul>
         </article>
     </section>
@@ -215,10 +242,13 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(18).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 3, articleQuery = "politics" })
+                @foreach (var article in Model.Skip(30).Take(3))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
 
             </ul>
         </article>
@@ -226,22 +256,26 @@
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(19).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4, articleQuery = "music" })
-
+                @foreach (var article in Model.Skip(23).Take(4))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
             </ul>
         </article>
         <article class="SArticle">
             @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(20).Take(1))
             {
                 <img src="@article.UrlToImage" class="smallImg">
-                <a href=@article.Url><b>@article.Title</b></a>
+                <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 4, articleQuery = "sport" })
-
+                @foreach (var article in Model.Skip(33).Take(4))
+                {
+                    <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
+                }
             </ul>
         </article>
 
