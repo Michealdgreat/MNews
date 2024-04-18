@@ -16,7 +16,7 @@ namespace MNews.Views.Shared.Components.MNNewsList
         private readonly IMemoryCache _cache = cache;
         private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 
-        public async Task<IViewComponentResult> InvokeAsync(bool randomize, int noOfArticle, string articleQuery)
+        public async Task<IViewComponentResult> InvokeAsync(bool randomize, int noOfArticle, string articleQuery, string viewType = "Default")
         {
             var cacheKey = $"News-{randomize}-{noOfArticle}";
             if (!_cache.TryGetValue(cacheKey, out List<ArticleModel> cachedNews))
@@ -42,8 +42,13 @@ namespace MNews.Views.Shared.Components.MNNewsList
                 _cache.Set(cacheKey, news, cacheEntryOptions);
                 cachedNews = news;
             }
-
-            return View(cachedNews);
+            switch (viewType)
+            {
+                case "FooterPost":
+                    return View("FooterPost", cachedNews);
+                default:
+                    return View("Default", cachedNews);
+            }
         }
     }
 
