@@ -34,7 +34,7 @@
         </article>
         <article>
             <div>
-               @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(3).Take(1))
+               @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(4).Take(1))
                 {
                     <div style="position: relative;">
                         <img src="@article.UrlToImage" class="smallImg">
