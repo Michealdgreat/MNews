@@ -16,15 +16,12 @@
     <link href="~/mnewstemplate/style/mnn.css" rel="stylesheet" asp-append-version="true" />
 </head>
 <body>
-	<header>
-		<!--  navbar  -->
-	</header>
+	
 	<nav>
 		<div>
 			<i class="bi bi-list" style="font-size: 1.8rem; cursor: pointer;"></i>
-            <a href=""><img src="~/mnewstemplate/Img/favicon.png"></a>
+            <a href="@Url.Action("Index", "Home")"><img src="~/mnewstemplate/Img/favicon.png"></a>
             <a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "world" })">World</a>
-
 			<a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Politics"})>Politics</a>
             <a href=" @Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Business" })">Business</a>
             <a href=" @Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Health" })">Health</a>
@@ -41,25 +38,15 @@
 		</div>
 	</nav>
 	<main>
-		<!-- nav 2  -->
+		<!-- Nav2-Below main menu  -->
 		<div id="div1">
-			<span>War in Ukraine</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Ukraine" })">War in Ukraine</a></span>
 			<span>|</span>
-			<span>Trump indictment</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Iran missile" })">Iran missile</a></span>
 			<span>|</span>
-			<span>Asiana Airlines</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Sudan conflict" })">Sudan conflict</a></span>
 			<span>|</span>
-			<span>Canada wildfires</span>
-			<span>|</span>
-			<span>Sudan conflict</span>
-			<span>|</span>
-			<span>Iran missile</span>
-			<span>|</span>
-			<span>Mystery Covid variants</span>
-			<span>|</span>
-			<span>Beautiful homeless shelter</span>
-			<span>|</span>
-			<span>Qantas gender rules</span>
+            <span><a href="@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Canada wildfires" })">Canada wildfires</a></span>
 		</div>
 
         </main>
@@ -71,126 +58,75 @@
     </div>
 
         <footer>
-            <!-- place footer here -->
             <h1>In Case You missed it</h1>
             <article>
-                <div>
-                    <img src="https://media.cnn.com/api/v1/images/stellar/prod/230808141753-simone-biles-mental-health-break-wellness.jpg?c=16x9&q=h_438,w_780,c_fill">
-                    <h1>What we can learn from Simone Biles’ mental health break</h1>
-                </div>
-            <ul>
-                @await Component.InvokeAsync("MNNewsList", new { randomize = true, noOfArticle = 10, articleQuery = "war" })
+            @await Component.InvokeAsync("MNNewsList", new { randomize = false, noOfArticle = 12, articleQuery = "finland", viewType = "FooterPost" })
 
-                </ul>
             </article>
             <article>
             <form method="get" action="@Url.Action("SearchByQuery", "SearchNews")">
                 <input type="text" name="SearchQuery" placeholder="Search MNN...">
                 <button type="submit">Search →</button>
             </form>
-
-                <div>
-                    <img src="./Img/favicon.png">
-                    <h3>Log In</h3>
-                </div>
                 <div>
                     <h3 role="link">Travel</h3>
-                    <a href="">Destinations</a>
-                    <a href="">Food & Drink</a>
-                    <a href="">Stay</a>
-                    <a href="">News</a>
-                    <a href="">Videos</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Destinations" })>Destinations</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Food and Dring" })>Food & Drink</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "lifestyle" })>Stay</a>
                 </div>
                 <div>
                     <h3 role="link">Sports</h3>
-                    <a href="">Football</a>
-                    <a href="">Tennis</a>
-                    <a href="">Golf</a>
-                    <a href="">Motorsport</a>
-                    <a href="">US Sports</a>
-                    <a href="">Olympics</a>
-                    <a href="">Climbing</a>
-                    <a href="">Esports</a>
-                    <a href="">Hockey</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Football" })>Football</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Tennis" })>Tennis</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Golf" })>Golf</a>
                 </div>
                 <div>
                     <h3 role="link">Videos</h3>
-                    <a href="">Live TV</a>
-                    <a href="">Digital Studios</a>
-                    <a href="">CNN Films</a>
-                    <a href="">HLN</a>
-                    <a href="">TV Schedule</a>
-                    <a href="">TV Shows A-Z</a>
-                    <a href="">CNNVR</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Live Tv" })>Live TV</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Digital Studios" })>Digital Studios</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Netflix Movies" })>NETFLIX Films</a>
                 </div>
                 <div>
                     <h3 role="link">Features</h3>
-                    <a href="">As Equals</a>
-                    <a href="">Call to Earth</a>
-                    <a href="">Freedom Project</a>
-                    <a href="">Impact Your World</a>
-                    <a href="">Inside Africa</a>
-                    <a href="">2 Degrees</a>
-                    <a href="">CNN Heroes</a>
-                    <a href="">All Features</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Modern" })>Modern</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Earth" })>Earth</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "freedom" })>Freedom</a>
                 </div>
                 <div>
                     <h3 role="link">Weather</h3>
-                    <a href="">Climate</a>
-                    <a href="">Wildfire Tracker</a>
-                    <a href="">Video</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "climate" })>Climate</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "Wild tracker" })>Wildfire Tracker</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "video" })>Video</a>
                 </div>
                 <div>
                     <h3 role="link">More</h3>
-                    <a href="">Photos</a>
-                    <a href="">Longform</a>
-                    <a href="">Investigations</a>
-                    <a href="">CNN Profiles</a>
-                    <a href="">CNN Leadership</a>
-                    <a href="">CNN Newsletters</a>
-                    <a href="">Work for CNN</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "photos" })>Photos</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "videos" })>Videos</a>
+                <a href=@Url.Action("SearchByQuery", "SearchNews", new { SearchQuery = "investigations" })>Investigations</a>
                 </div>
             </article>
-            <article>
-                <a href="">Live TV</a>
-                <a href="">Audio</a>
-            </article>
-            <article>
-                <a href="">World</a>
-                <a href="">US Politics</a>
-                <a href="">Business</a>
-                <a href="">Health</a>
-                <a href="">Entertainment</a>
-                <a href="">Tech</a>
-                <a href="">Style</a>
-                <a href="">Travel</a>
-                <a href="">Sports</a>
-                <a href="">Videos</a>
-                <a href="">Features</a>
-                <a href="">Weather</a>
-                <a href="">More</a>
-            </article>
+        <article>
+        </article>
+        <article>
+        </article>
             <article>
                 <div>
                 <img src="~/mnewstemplate/Img/favicon.png">
                     <a href="">MN News</a>
                 </div>
                 <div>
-                    
                     <p>|</p>
-                    <p>FOLLOW MNN</p>
                     <i class="bi bi-facebook"></i>
                     <i class="bi bi-twitter"></i>
                     <i class="bi bi-instagram"></i>
-                    <button>Log In</button>
+                    <button>LIVE</button>
                 </div>
             </article>
             <article>
-                <br>
                 MNN News &trade; & &copy; 2024 News Network.</p>
             </article>
         </footer>
-        <!-- Bootstrap JavaScript Libraries -->
+        <!-- Bootstrap JScript Lib -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
         <script src="MNN.js"></script>
 	<script src="js/main.js"></script>

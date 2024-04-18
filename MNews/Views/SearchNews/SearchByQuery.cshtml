@@ -14,3 +14,51 @@
         </li>
     }
 </ul>
+
+<section>
+    <h1>More Related News</h1>
+</section>
+<section id="news5">
+    <article class="SArticle">
+        <div>SPORT</div>
+        @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(0).Take(1))
+        {
+            <img src="@article.UrlToImage" class="smallImg">
+            <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+        }
+
+        @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(1).Take(5))
+        {
+            <li><a href=@article.Url target="_blank">@article.Title</a></li>
+
+        }
+    </article>
+    <article class="SArticle">
+        <div>SPORT</div>
+        @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(5).Take(1))
+        {
+            <img src="@article.UrlToImage" class="smallImg">
+            <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+        }
+
+        @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(5))
+        {
+            <li><a href=@article.Url target="_blank">@article.Title</a></li>
+
+        }
+    </article>
+    <article class="SArticle">
+        <div>SPORT</div>
+        @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(6).Take(1))
+        {
+            <img src="@article.UrlToImage" class="smallImg">
+            <a href=@article.Url style="font-size: 1.2rem;"><b>@article.Title</b></a>
+        }
+
+        @foreach (var article in Model.Where(article => article.UrlToImage != null).Skip(7).Take(5))
+        {
+            <li><a href=@article.Url target="_blank">@article.Title</a></li>
+
+        }
+    </article>
+</section>
