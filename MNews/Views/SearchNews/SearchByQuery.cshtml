@@ -1,0 +1,16 @@
+﻿
+@model List<ArticleModel>
+
+<h2>Search Results</h2>
+<hr />
+
+<ul>
+    @foreach (var article in Model.Take(10))
+    {
+        <li>
+            <a href="@article.Url" style="font-weight: bold; font-size: larger;">@article.Title</a>
+            <br />
+            <hr />
+        </li>
+    }
+</ul>
