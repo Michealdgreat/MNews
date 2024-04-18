@@ -1,0 +1,22 @@
+﻿@model ArticleModel
+
+<section id="news1" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+    <article style="text-align: left; width: 80%; max-width: 800px; margin: auto;">
+        <a href="@Url.Action("ArticleDetails", "Home", new { url = Model.Url })" style="font-size: 1.5em; font-weight: bold; display: block; margin-bottom: 20px;">@Model.Title</a>
+        <p>@Model.Description</p>
+        <div style="position: relative; margin: 20px auto;">
+            <img src="@Model.UrlToImage" class="bigImg" style="width: 100%; display: block;">
+            <div style="padding: .4rem 1rem; width: 130px; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); background-color: white; display: flex; align-items: center; justify-content: space-between;">
+                <i class="bi bi-dot" style="font-size: 3rem; color: red; margin: -1.5rem -.8rem;"></i><b style="font-size: .7rem;">JUST IN</b>
+            </div>
+        </div>
+        <div style="padding: 0;">
+            @Html.Raw(Model.Content)
+            <p>Author: @Model.Author</p>
+            <p>Published on: @Model.PublishedAt.ToString("MMMM dd, yyyy")</p>
+            <button style="margin-top: 20px;"><a href="@Model.Url" target="_blank">Read full article</a></button>
+        </div>
+        
+    </article>
+</section>
+
