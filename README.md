@@ -44,4 +44,15 @@ public class TopHeadlines : ViewComponent
 }
 ```
 ## ScreenShots
+### 01
 ![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(1).jpg "How to Run the Program")
+### 02
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(2).jpg "How to Run the Program")
+### 03
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(3).jpg "How to Run the Program")
+### 04
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(4).jpg "How to Run the Program")
+### 05
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(5).jpg "How to Run the Program")
+### 06
+![ScreenView](MNews/ReadMe/Homepage.jpg "WebPage")
