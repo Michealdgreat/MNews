@@ -42,3 +42,7 @@ public class TopHeadlines : ViewComponent
 {
     private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 }
+```
+## ScreenShots
+![Local Image](./MNews/ReadMe/HowToRUnTheProgram (1).jpg "Local Image")
+
