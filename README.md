@@ -44,5 +44,4 @@ public class TopHeadlines : ViewComponent
 }
 ```
 ## ScreenShots
-![Local Image](./MNews/ReadMe/HowToRUnTheProgram (1).jpg "Local Image")
-
+![How to Run the Program](./ReadMe/HowToRUnTheProgram%20(1).jpg "How to Run the Program")
