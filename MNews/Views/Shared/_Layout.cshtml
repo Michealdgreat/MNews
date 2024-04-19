@@ -9,7 +9,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
 	<!-- Bootstrap CSS v5.3.0 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="Style/MNN.css" rel="stylesheet" asp-append-version="true">
@@ -56,11 +55,12 @@
             @RenderBody()
         </main>
     </div>
-
         <footer>
-            <h1>In Case You missed it</h1>
+            <h1></h1>
             <article>
-            @await Component.InvokeAsync("MNNewsList", new { randomize = false, noOfArticle = 12, articleQuery = "finland", viewType = "FooterPost" })
+            <div>
+                <ul></ul>
+            </div>
             </article>
             <article>
             <form method="get" action="@Url.Action("SearchByQuery", "SearchNews")">
@@ -114,7 +114,7 @@
                     <a href="">MN News</a>
                 </div>
                 <div>
-                    <p>|</p>
+                    <p></p>
                     <i class="bi bi-facebook"></i>
                     <i class="bi bi-twitter"></i>
                     <i class="bi bi-instagram"></i>
@@ -122,7 +122,7 @@
                 </div>
             </article>
             <article>
-                MNN News &trade; & &copy; 2024 News Network.</p>
+                MNN News &trade; & &copy; 2024 MNN News Network.</p>
             </article>
         </footer>
         <!-- Bootstrap JScript Lib -->
