@@ -28,7 +28,7 @@
             }
             <ul>
 
-                @foreach (var article in Model.Skip(16).Take(2))
+                @foreach (var article in Model.Skip(16).Take(1))
                 {
                     <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
                 }
@@ -62,7 +62,7 @@
             <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
                 }
             <ul>
-                @foreach (var article in Model.Skip(10).Take(5))
+                @foreach (var article in Model.Skip(10).Take(3))
                 {
                     <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
 
@@ -108,7 +108,7 @@
         <article class="SArticle">
                 <ul style="margin-top: 0;">
 
-                @foreach (var article in Model.Take(4))
+                @foreach (var article in Model.Take(6))
                 {
                     <li style="border-top: none; padding-top: 0;">
                         <img src="@article.UrlToImage" class="vSmallImg">
@@ -245,7 +245,7 @@
                 <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @foreach (var article in Model.Skip(30).Take(3))
+                @foreach (var article in Model.Skip(30).Take(5))
                 {
                     <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
                 }
@@ -272,7 +272,7 @@
                 <a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })><b>@article.Title</b></a>
             }
             <ul>
-                @foreach (var article in Model.Skip(33).Take(4))
+                @foreach (var article in Model.Skip(33).Take(5))
                 {
                     <li><a href=@Url.Action("ArticleDetails", "Home", new { url = article.Title })>@article.Title</a></li>
                 }

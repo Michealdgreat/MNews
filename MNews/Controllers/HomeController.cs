@@ -35,4 +35,5 @@ public class HomeController(ILogger<HomeController> logger, IConfiguration confi
 
         return View(article);
     }
+
 }
