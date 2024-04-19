@@ -2,7 +2,7 @@
 
 <section id="news1" style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
     <article style="text-align: left; width: 80%; max-width: 800px; margin: auto;">
-        <a href="@Url.Action("ArticleDetails", "Home", new { url = Model.Url })" style="font-size: 1.5em; font-weight: bold; display: block; margin-bottom: 20px;">@Model.Title</a>
+        <a href=@Url.Action("ArticleDetails", "Home", new { url = Model.Title }) style="font-size: 1.5em; font-weight: bold; display: block; margin-bottom: 20px;">@Model.Title</a>
         <p>@Model.Description</p>
         <div style="position: relative; margin: 20px auto;">
             <img src="@Model.UrlToImage" class="bigImg" style="width: 100%; display: block;">
