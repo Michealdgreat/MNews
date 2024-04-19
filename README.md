@@ -9,7 +9,7 @@ Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that p
 - **Efficient Filtering**: You can filter articles right from the UI, helping you quickly find the news that interests you the most.
 - **Service Layer Architecture**: All the heavy lifting about data fetching and operations is done in the service layer, keeping things organized.
 - **Modular ViewComponents**: We're all about clean and maintainable code, which is why we use ViewComponents. They help keep our codebase tidy and easy to manage.
-
+![AcTIVITY dIAGRAM](MNews/ReadMe/ActivityDiagram.jpg "Activity Diagram IMG")
 ## Configuration Details
 
 To get the MNN app up and running, there are a few things you need to set up first. Here’s how you can get your environment ready:
