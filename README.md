@@ -9,6 +9,10 @@ Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that p
 - **Efficient Filtering**: You can filter articles right from the UI, helping you quickly find the news that interests you the most.
 - **Service Layer Architecture**: All the heavy lifting about data fetching and operations is done in the service layer, keeping things organized.
 - **Modular ViewComponents**: We're all about clean and maintainable code, which is why we use ViewComponents. They help keep our codebase tidy and easy to manage.
+## Activity Diagram
+
+
+![AcTIVITY dIAGRAM](MNews/ReadMe/ActivityDiagram.jpg "Activity Diagram IMG")
 
 ## Configuration Details
 
@@ -42,3 +46,36 @@ public class TopHeadlines : ViewComponent
 {
     private readonly string _apiKey = configuration.GetValue<string>("apiKey");
 }
+```
+## ScreenShots
+### 01
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(1).jpg "How to Run the Program")
+### 02
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(2).jpg "How to Run the Program")
+### 03
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(3).jpg "How to Run the Program")
+### 04
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(4).jpg "How to Run the Program")
+### 05
+![How to Run the Program](MNews/ReadMe/HowToRUnTheProgram%20(5).jpg "How to Run the Program")
+### 06
+![ScreenView](MNews/ReadMe/Homepage.jpg "WebPage")
+
+## HomePage Content Customization
+You can personalize the content on the homepage by modifying the query keyword in the HomeController.cs file (see screenshot below). To tailor the content to a specific country, simply update the country name in the HomeController.cs file and save your changes. For additional customization options, please visit [News API - Everything Endpoint](https://newsapi.org/docs/endpoints/everything) to explore various GET queries available for all content types.
+
+![ScreenView](MNews/ReadMe/HowToCustomizeHomepageCOntent.jpg "WebPage")
+
+
+## Conclusion
+
+Thank you for exploring the MNN - Modern News Network Viewer! This project is designed to deliver a seamless and engaging news browsing experience, inspired by the intuitive layout of CNN. With MNN, you can stay updated with the latest news effortlessly thanks to our dynamic content fetching and user-friendly design.
+
+We're constantly striving to improve and expand the capabilities of our application. If you have any suggestions, encounter any issues, or would like to contribute, please feel free to reach out or submit a pull request. Your feedback and contributions are highly appreciated as they help us make MNN even better.
+
+Get started today and experience a new way of staying informed about the world around you!
+
+---
+
+**Happy browsing, and stay informed!**
+
