@@ -61,6 +61,11 @@ public class TopHeadlines : ViewComponent
 ### 06
 ![ScreenView](MNews/ReadMe/Homepage.jpg "WebPage")
 
+## HomePage Content Customization
+You can personalize the content on the homepage by modifying the query keyword in the HomeController.cs file (see screenshot below). To tailor the content to a specific country, simply update the country name in the HomeController.cs file and save your changes. For additional customization options, please visit [News API - Everything Endpoint](https://newsapi.org/docs/endpoints/everything) to explore various GET queries available for all content types.
+
+![ScreenView](MNews/ReadMe/HowToCustomizeHomepageCOntent.jpg "WebPage")
+
 
 ## Conclusion
 
