@@ -13,6 +13,7 @@ Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that p
 
 
 ![AcTIVITY dIAGRAM](MNews/ReadMe/ActivityDiagram.jpg "Activity Diagram IMG")
+![AcTIVITY dIAGRAM](MNews/ReadMe/ACTIVITY%20DIAGRAM.svg "Activity Diagram IMG")
 
 ## Configuration Details
 
