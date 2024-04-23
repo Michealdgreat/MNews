@@ -1,7 +1,7 @@
-# MNN - Modern News Network Viewer
+# MNN - Modern News Network
 
 ## Project Description
-Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that pulls news articles from the NewsOrg API(newsapi.org). It's designed to look a bit like CNN, making it super easy and enjoyable to navigate. We use ViewComponents to manage UI components effectively and to filter content, which makes your experience smooth and straightforward.
+Hey there! MNN (Modern News Network) is an ASP.NET MVC application that pulls news articles from the NewsOrg API(newsapi.org). It's designed to look a bit like CNN, making it super easy and enjoyable to navigate. We use ViewComponents to manage UI components effectively and to filter content, which makes your experience smooth and straightforward.
 
 ## Key Features
 - **Dynamic News Display**: Grabs articles dynamically using HTTP GET requests from newsapi.org.
