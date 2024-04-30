@@ -1,7 +1,7 @@
-# MNN - Modern News Network Viewer
+# MNN - Modern News Network
 
 ## Project Description
-Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that pulls news articles from the NewsOrg API(newsapi.org). It's designed to look a bit like CNN, making it super easy and enjoyable to navigate. We use ViewComponents to manage UI components effectively and to filter content, which makes your experience smooth and straightforward.
+Hey there! MNN (Modern News Network) is an ASP.NET MVC application that pulls news articles from the NewsOrg API(newsapi.org). It's designed to look a bit like CNN, making it super easy and enjoyable to navigate. We use ViewComponents to manage UI components effectively and to filter content, which makes your experience smooth and straightforward.
 
 ## Key Features
 - **Dynamic News Display**: Grabs articles dynamically using HTTP GET requests from newsapi.org.
@@ -12,7 +12,7 @@ Hey there! MNN (Modern News Network Viewer) is an ASP.NET MVC application that p
 ## Activity Diagram
 
 
-![AcTIVITY dIAGRAM](MNews/ReadMe/ActivityDiagram.jpg "Activity Diagram IMG")
+![AcTIVITY dIAGRAM](MNews/ReadMe/ACTIVITY%20DIAGRAM.svg "Activity Diagram IMG")
 
 ## Configuration Details
 
@@ -69,7 +69,7 @@ You can personalize the content on the homepage by modifying the query keyword i
 
 ## Conclusion
 
-Thank you for exploring the MNN - Modern News Network Viewer! This project is designed to deliver a seamless and engaging news browsing experience, inspired by the intuitive layout of CNN. With MNN, you can stay updated with the latest news effortlessly thanks to our dynamic content fetching and user-friendly design.
+Thank you for exploring the MNN - Modern News Network! This project is designed to deliver a seamless and engaging news browsing experience, inspired by the intuitive layout of CNN. With MNN, you can stay updated with the latest news effortlessly thanks to our dynamic content fetching and user-friendly design.
 
 We're constantly striving to improve and expand the capabilities of our application. If you have any suggestions, encounter any issues, or would like to contribute, please feel free to reach out or submit a pull request. Your feedback and contributions are highly appreciated as they help us make MNN even better.
 
